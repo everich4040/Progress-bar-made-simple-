@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+  border:2px solid #d54ae5;
+  border-radius:20px;
+}
+
+#myBar {
+  position: absolute;
+  height: 100%;
+  background-color: #aeea38;
+  border-radius:20px;
+  
+}
+h1{
+text-align:center;
+color:#414141;
+}
+
+</style>
+</head>
+<body>
+    
+    
+    <h1>A simple progress bar</h1>
+
+<div id="myProgress">
+  <div id="myBar">
+    <div id="label"></div>
+  </div>
+</div>
+
+
+
+<script>
+
+var btn = document.querySelector("#progress");
+var label = document.querySelector("#label");
+var mybar = document.querySelector("#myBar");
+var width = 1;
+
+function progress(){
+if(width >= 100){
+    clearInterval(clear);
+    }
+    else{
+    width++
+    myBar.innerHTML = width+"%";
+    myBar.style.color = `#${width+45}456`;
+    myBar.style.width = width+'%';
+    myBar.style.lineHeight = "30px";
+    myBar.style.textAlign = "center";
+    }
+    
+}
+
+
+
+var clear = setInterval(progress,50)
+</script>
+
+    
+</body>
+</html>
+
+
+
